@@ -32,12 +32,15 @@ const PopupForm = ({ isOpen, onClose }) => {
       setErrors({});
 
       axios
-        .post("/api/referrals", {
-          name,
-          email,
-          referredBy,
-          course,
-        })
+        .post(
+          "https://accredian-backend-task-frf1.onrender.com/api/referrals",
+          {
+            name,
+            email,
+            referredBy,
+            course,
+          }
+        )
         .then((response) => {
           setErrors({});
           setName("");
